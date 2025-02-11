@@ -1,4 +1,5 @@
 <?php
+    header("Content-Type: application/json");
     include "Cane.php";
     $cane = new Cane();
 ?>
@@ -20,9 +21,7 @@
     <div class="stampa">
         <h1> PHP-OOP </h1>
         <?php
-            for($i = 0; $i < 10; $i++){
-                echo $cane -> verso() . "<br><br>";
-            }
+            echo json_encode($cane);
         ?>
     </div>
 </body>

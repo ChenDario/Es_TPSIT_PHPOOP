@@ -7,8 +7,6 @@
     $studente4 = new Studente("Tommaso", "Frediani", 6521);
 
     $studenti = [$studente1, $studente2, $studente3, $studente4];
-
-    json_encode($studenti);
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +27,7 @@
     <div class="stampa">
         <h1> PHP-OOP </h1>
         <?php
-            foreach($studenti as $studente){
-                echo $studente -> presentati() . "<br><br>";
-            }
+            echo json_encode($studenti);
         ?>
     </div>
 </body>

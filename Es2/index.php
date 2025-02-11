@@ -1,4 +1,5 @@
 <?php
+    header("Content-Type: application/json");
     include 'Automobile.php';
 
     // Creazione degli oggetti Automobile
@@ -26,10 +27,7 @@
     <div class="stampa">
         <h1> PHP-OOP </h1>
         <?php
-            // Stampa delle auto
-            foreach ($auto as $auto) {
-                $auto->stampa();
-            }
+            echo json_encode($auto);
         ?>
     </div>
 </body>

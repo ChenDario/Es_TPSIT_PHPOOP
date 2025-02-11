@@ -1,7 +1,7 @@
 <?php
     include 'Persona.php';
 
-    class Studente extends Persona {
+    class Studente extends Persona implements JsonSerializable{
         private $matricola;
 
         // Costruttore
@@ -10,9 +10,10 @@
             $this->matricola = $matricola;
         }
 
-        // Metodo per presentarsi come studente
-        public function presentati() {
-            return parent::presentati() . " La mia matricola è " . $this->matricola . ".";
+        public function jsonSerialize(): array{
+            return array_merge(parent::jsonSerialize(), [
+                'matricola' => $this-> matricola
+            ]);
         }
     }
 ?>

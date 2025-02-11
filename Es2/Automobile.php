@@ -1,7 +1,7 @@
 <?php
     include 'Veicolo.php';
     //Classe con ereditarietà
-    class Automobile extends Veicolo{
+    class Automobile extends Veicolo implements JsonSerializable{
         private $modello;
 
         // Costruttore
@@ -19,6 +19,14 @@
             echo "Marca: " . $this -> marca . "<br>";
             echo "Anno: " . $this -> anno . "<br>";
             echo "Modello: " . $this -> modello . "<br><br>";
+        }
+
+        public function jsonSerialize(): array{
+            return [
+                "marca" => $this-> marca,
+                "anno" => $this-> anno,
+                "modello" => $this-> modello
+            ];
         }
     }
 ?>

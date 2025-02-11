@@ -1,4 +1,5 @@
 <?php
+    header("Content-Type: application/json");
     include 'Alunno.php';
 
     // Creazione degli oggetti Alunno
@@ -6,7 +7,7 @@
     $alunno2 = new Alunno("Luca", "Bianchi", 22);
 
     // Creazione di un array di oggetti Alunno
-    $alunni = [$alunno1, $alunno2];
+    $alunni = [$alunno1, $alunno2]; 
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +27,7 @@
     <div class="stampa">
         <h1> PHP-OOP </h1>
         <?php
-            // Stampa degli alunni
-            foreach ($alunni as $alunno) {
-                $alunno->stampa();
-            }
+            echo json_encode($alunni);
         ?>
     </div>
 </body>

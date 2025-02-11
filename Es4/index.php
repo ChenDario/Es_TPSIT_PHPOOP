@@ -7,6 +7,8 @@
     $studente4 = new Studente("Tommaso", "Frediani", 6521);
 
     $studenti = [$studente1, $studente2, $studente3, $studente4];
+
+    json_encode($studenti);
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
-    
+
     <!-- Link CSS -->
     <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
